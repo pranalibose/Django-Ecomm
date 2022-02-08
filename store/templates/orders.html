@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load cart %}
+{% load custom_filter %}
+
+<div class="container">
+    <div id="div-spacer">
+        <br>
+        <br>
+      </div>
+    <div class="row">
+  <div class="border rounded p-4 m-4"> 
+      <h2 class="dispay-9 pl-4 ml-4" align="left">
+          Order Summary
+      </h2>
+      <hr>
+    <!-- {{products}} -->
+    <table class="table">
+        <thead>
+            <!-- <tr> -->
+                <th>Sno.</th>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Date</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Status</th>
+            <!-- </tr> -->
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td><img style="height: 80px;" class="rounded-circle" src="{{order.product.image.url}}" alt=""></td>
+                <td>{{order.product.name}}</td>
+                <td>{{order.date}}</td>
+                <td><bold style="font-size:12px">{{request.session.custom_filter|currency}}</bold>{{order.product.price}}</td>
+                <td>{{order.quantity}}</td>
+                <td><bold style="font-size:12px">{{request.session.custom_filter|currency}}</bold>{{order.quantity|multiply:order.product.price}}</td>
+                {% if order.confirmed %}
+                <td><small class="badge alert-success">Confirmed</small></td>
+                {% else %}
+                <td><small class="badge alert-warning">Pending</small></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+        
+    </table>
+    
+  </div>
+  <div id="div-spacer">
+    <br>
+    <br>
+  </div>
+<div class="row">
+</div>
+
+
+
+{% endblock %}

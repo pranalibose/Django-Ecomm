@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load cart %}
+{% load custom_filter %}
+
+<div class="container">
+  <div id="div-spacer">
+    <br>
+    <br>
+  </div>
+    <style>
+        .wrapper {
+    height: 100vh;
+    background: #000;
+    background: url("https://i.imgur.com/g63vXfd.jpg");
+    background-size: cover;
+    width: 100%
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8)
+}
+
+.contact-us {
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+.contact-us h3,
+p {
+    color: #fff
+}
+
+.address {
+    margin-top: 14px !important;
+    margin-left: 8px
+}
+
+.address span {
+    color: #fdfdfd
+}
+
+.icons {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.icons i {
+    font-size: 20px
+}
+
+.forms {
+    padding: 20px
+}
+
+.inputs input {
+    margin-bottom: 13px;
+    border: none;
+    border-bottom: 2px solid #eee
+}
+
+.inputs input:focus {
+    margin-bottom: 13px;
+    border: none;
+    border-bottom: 2px solid #371fa2;
+    box-shadow: none
+}
+
+.inputs textarea {
+    margin-bottom: 13px;
+    border: none;
+    border-bottom: 2px solid #eee;
+    width: 100%;
+    resize: none
+}
+
+.inputs textarea:focus {
+    margin-bottom: 13px;
+    border: none;
+    border-bottom: 2px solid #1f2ca2;
+    box-shadow: none;
+    resize: none
+}
+
+.form-control {
+    padding: .375rem .25rem
+}
+    </style>
+    <div class="row">
+        <div class="wrapper">
+            <div class="overlay">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-md-9">
+                        <div class="contact-us text-center">
+                            <h3>About Us</h3>
+                                <br>
+                                <ul class="mb-5" style="color: aliceblue; text-align: center;">
+                                <li style="text-align: left;">BOSS Leathers was established in the year 1994.</li>
+                                <li style="text-align: left;">Over the last more than two decades it has emerged as one of the finest companies with regard to best quality Shantiniketan Leather products (Leather handicrafts) as its speciality. </li>
+                                <li style="text-align: left;">Of late the brand has expanded into pure leather (tanned) products which have gained immediate popularity due to its highest quality.</li>
+                                <li style="text-align: left;">The brand deals in premium products and have been able to create a niche for itself and is now expanding in the canvas and jute products also.</li>
+                                <li style="text-align: left;">We have been working with and supplying to all major handicrafts promoting showrooms and major export houses.</li>
+                                </ul>
+                                <br>
+                                <p class="mb-5" style="color: aliceblue;"><h3>Our Vision...</h3></p>
+                                <p class="mb-5" style="color: aliceblue;">
+                                    To be the number one Leather Handicrafts Products company through continuous innovation, consistent quality and becoming the second skin of our customers.
+                                </p>
+                                <br>
+                                <p class="mb-5" style="color: aliceblue;"><h3>Our Mission...</h3></p>
+                                <p class="mb-5" style="color: aliceblue;">
+                                To serve people globally and become the most sought after brand by building TRUST.
+                                </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <div id="div-spacer">
+      <br>
+      <br>
+    </div>
+  <div class="row">
+</div>
+
+{% endblock %}

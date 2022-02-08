@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load cart %}
+{% load custom_filter %}
+
+<div class="container">
+  <div id="div-spacer">
+    <br>
+    <br>
+  </div>
+<div class="row">
+    <div class="p-3 m-3">
+        <div class="col-lg-4 mt-4 mb-4 mx-auto border rounded pt-4 pb-4 ps-4 pe-4">
+            <form action="/login" method="POST">
+
+                {% csrf_token %}
+                <h3 class="alert alert-light border rounded align-center">Login Here</h3>
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                  {{error}}
+                </div>
+                {% endif %}
+
+                <!-- email -->
+                <div class="form-group">
+                  <label for="">Email <font color='red'>*</font></label>
+                  <input required type="email" name="email" id="" value = "{{values.email}}" class="form-control form-control-sm" placeholder="example@gmail.com" >
+                </div>
+                <br>
+                <!-- password -->
+                <div class="form-group">
+                    <label for="">Password <font color='red'>*</font></label>
+                    <input type="password" name="password" id="" class="form-control form-control-sm" placeholder="*******" >
+                  </div>
+                  <br>
+                <!-- forgot password -->
+                <div class="form-group">
+                  <a href = "{% url 'password_reset' %}" class="link-primary">Forgot Password</a>
+                </div>
+                <br>
+                <!-- login button -->
+                <div class="form-group">
+                    <input class= "btn btn-rounded btn-small btn-info col-lg-4" type="submit" value="Login">
+                </div>
+            </form>
+      
+        </div>
+      
+    </div>
+    <div id="div-spacer">
+      <br>
+      <br>
+    </div>
+  <div class="row">
+</div>
+
+{% endblock %}

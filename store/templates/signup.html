@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="p-3 m-3">
+        <div class="col-lg-5 mx-auto border rounded pt-4 pb-4 ps-4 pe-4">
+            <form action="/signup" method="POST">
+
+                {% csrf_token %}
+                <h3 class="alert alert-light border rounded">Create an Account</h3>
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                  {{error}}
+                </div>
+                {% endif %}
+
+                
+                  <!-- first name -->
+                  <div class="form-group">
+                    <label for="">First Name <font color='red'>*</font></label>
+                    <input type="text" name="firstname" id="" value = "{{values.first_name}}" class="form-control form-control-sm " placeholder="John" >
+                  </div>
+                  <br>
+                  <!-- last name -->
+                <div class="form-group">
+                    <label for="">Last Name <font color='red'>*</font></label>
+                    <input type="text" name="lastname" id="" value = "{{values.last_name}}" class="form-control form-control-sm" placeholder="Read" >
+                  </div>
+                  <br>
+                <!-- phone -->
+                <div class="form-group">
+                    <label for="">Phone <font color='red'>*</font></label>
+                    <input type="text" name="phone" id="" value = "{{values.phone}}" class="form-control form-control-sm" placeholder="9176224578" >
+                  </div>
+                  <br>
+                <!-- email -->
+                <div class="form-group">
+                  <label for="">Email <font color='red'>*</font></label>
+                  <input required type="email" name="email" id="" value = "{{values.email}}" class="form-control form-control-sm" placeholder="example@gmail.com" >
+                </div>
+                <br>
+                <!-- password -->
+                <div class="form-group">
+                    <label for="">Password <font color='red'>*</font></label>
+                    <input type="password" name="password" id="" class="form-control form-control-sm" placeholder="*******" >
+                  </div>
+                  <br>
+                <!-- confirm password -->
+                <div class="form-group">
+                  <label for="">Confirm Password <font color='red'>*</font></label>
+                  <input type="password" name="conpass" id="" class="form-control form-control-sm" placeholder="*******" >
+                </div>
+                <br>
+                <div class="form-group">
+                    <input class= "btn btn-small btn-info col-lg-4" type="submit" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
